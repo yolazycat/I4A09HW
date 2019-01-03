@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="HW6style.css">
+</head>
+
+<body> 
+<div id="info">Agent (Seek, Arrival, Collision)<br>
+<p id="message"></p>
+Passed Time <span id="timer">0 : 0<span>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+<script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script src="agent.js"></script>
+<script src="obstacle.js"></script>
+<script src="target.js"></script>
+
+<!-- must be before main.js -->
+<script src="scene.js"></script>
+<script src="threemain.js"></script>
+<script>
+    var min = 0;
+    var sec = 1;
+    var refreshInterval = setInterval(function(){
+    		var a = new Date();
+        document.getElementById("timer").innerHTML = min +" : " + sec ;
+        sec++;
+        if(sec == 60){
+            min++;
+            sec = 0;
+        }
+    },1000);
+</script>
+<script src="main.js"></script>
+</body>
+
+</html>
